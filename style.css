@@ -1,20 +1,20 @@
 *{
     margin: 0; 
     padding: 0;
-    font-family: monospace;
+    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
 
 body{
-    background: #222;
+    background: #292929;
 }
 
 .card{
     width: 100%;
     max-width: 700px;
     background: rgb(23,0,36);
-    background: linear-gradient(120deg, rgb(255, 253, 109) 3%, rgb(238, 155, 0) 80%);
-    color: #555353;
+    background: linear-gradient(120deg, rgb(247, 144, 162) 20%, rgb(176, 84, 238) 100%);
+    color: #000000;
     margin: 100px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
@@ -33,7 +33,7 @@ body{
     border: 0;
     outline: 0;
     background: #f1f7f6;
-    color: #383737;
+    color: #3d3c3c;
     padding: 15px 25px;
     height: 60px;
     border-radius: 30px;
@@ -81,7 +81,8 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    margin-top: 50px;
+    margin-top: 20px;
+    padding: 0 100px;
 }
 
 .col img{
@@ -91,18 +92,27 @@ body{
 .humidity, .wind, .feels_like, .sunset, .sunrise{
     font-size: 28px;
     margin-top: -6px;
+    font-weight: bold;
 }
 
+.temperatures{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .suns{
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 20px;
     margin-top: 50px;
+    padding: 0 100px;
 }
 
 .weather {
     display: none;
+    margin-top: 30px;
 }
 
 .error{
