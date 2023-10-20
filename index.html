@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="enter city name" spellcheck="false">
+            <button><img src="images/search.png" alt=""></button>
+        </div>
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
+
+        <div class="weather">
+            <h1 class="city">Argentina</h1>
+            <img src="images/rain.png" alt="weather-icon">
+            <h2 class="temp">22°C</h2>
+            <div class="temperatures">
+                <p class="temp_max">20°</p>
+                <p class="temp_min">8</p>
+            </div>
+            <div class="details">
+                <div class="col">
+                    <img src="images/dew.png">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/thermometer.png">
+                    <div>
+                        <p class="feels_like">25°</p>
+                        <p>Feels Like</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="suns">
+                <div class="col">
+                    <img src="images/sunrise.png">
+                    <div>
+                        <p class="sunrise">50%</p>
+                        <p>Sunrise</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/sunset.png">
+                    <div>
+                        <p class="sunset">15 km/h</p>
+                        <p>Sunset</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script>
+
+    const apiKey = "7f86321d33ae4519efd9cf84235476ce";
+     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
+
+     const searchBox = document.querySelector(".search input");
+     const searchBtn = document.querySelector(".search button");
+     const weatherIcon = document.querySelector(".weather img")   
+
+        async function checkWeather(city){
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+        if(response.status == 404){
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";
+        }else {
+
+            var data = await response.json();
+
+
+        //Actualizacion de datos
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+        document.querySelector(".humidity").innerHTML = data.main.humidity  + "%";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+        document.querySelector(".temp_max").innerHTML = Math.round(data.main.temp_max) + "°C";
+        document.querySelector(".temp_min").innerHTML = Math.round(data.main.temp_min) + "°C";
+        document.querySelector(".feels_like").innerHTML = data.main.feels_like;
+
+        //Actualizacion de imagenes
+        if(data.weather[0].main == "Clouds"){
+            weatherIcon.src = "images/cloud.png";
+        } else if (data.weather[0].main == "Clear"){
+            weatherIcon.src = "images/sun.png"
+        }
+        else if (data.weather[0].main == "Rain"){
+            weatherIcon.src = "images/rain.png"
+        }
+        else if (data.weather[0].main == "Drizzle"){
+            weatherIcon.src = "images/rain-cloud.png"
+        }
+        else if (data.weather[0].main == "Clear"){
+            weatherIcon.src = "images/partly-cloudy.png"
+        }
+
+        document.querySelector(".weather").style.display = "block";
+        document.querySelector(".error").style.display = "none";        
+
+        //Coloca la hora en formato local
+        const sunriseTimestamp = data.sys.sunrise * 1000; 
+        const sunriseDate = new Date(sunriseTimestamp);
+        const horaAmanecer = sunriseDate.toLocaleTimeString();
+        document.querySelector(".sunrise").innerHTML = horaAmanecer;
+        const sunsetTimestamp = data.sys.sunset * 1000;
+        const sunsetDate = new Date(sunsetTimestamp);
+        const horaAtardecer = sunsetDate.toLocaleTimeString(); 
+        document.querySelector(".sunset").innerHTML = horaAtardecer;
+
+        }
+
+
+        //Actualizacion de datos
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+        document.querySelector(".humidity").innerHTML = data.main.humidity  + "%";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+        document.querySelector(".temp_max").innerHTML = Math.round(data.main.temp_max) + "°C";
+        document.querySelector(".temp_min").innerHTML = Math.round(data.main.temp_min) + "°C";
+        document.querySelector(".feels_like").innerHTML = data.main.feels_like;
+
+        //Actualizacion de imagenes
+        if(data.weather[0].main == "Clouds"){
+            weatherIcon.src = "images/cloud.png";
+        } else if (data.weather[0].main == "Clear"){
+            weatherIcon.src = "images/sun.png"
+        }
+        else if (data.weather[0].main == "Rain"){
+            weatherIcon.src = "images/rain.png"
+        }
+        else if (data.weather[0].main == "Drizzle"){
+            weatherIcon.src = "images/rain-cloud.png"
+        }
+        else if (data.weather[0].main == "Clear"){
+            weatherIcon.src = "images/partly-cloudy.png"
+        }
+
+
+        document.querySelector(".weather").style.display = "block";        
+
+
+        //Coloca la hora en formato local
+        const sunriseTimestamp = data.sys.sunrise * 1000; 
+        const sunriseDate = new Date(sunriseTimestamp);
+        const horaAmanecer = sunriseDate.toLocaleTimeString();
+        document.querySelector(".sunrise").innerHTML = horaAmanecer;
+        const sunsetTimestamp = data.sys.sunset * 1000;
+        const sunsetDate = new Date(sunsetTimestamp);
+        const horaAtardecer = sunsetDate.toLocaleTimeString(); 
+        document.querySelector(".sunset").innerHTML = horaAtardecer;
+
+        }
+
+        searchBtn.addEventListener("click", ()=> {
+            checkWeather(searchBox.value);
+        })
+
+
+
+    </script>
+
+</body>
+</html>
