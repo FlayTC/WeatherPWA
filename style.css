@@ -10,12 +10,12 @@ body{
 }
 
 .card{
-    width: 100%;
-    max-width: 700px;
+    width: auto;
+    max-width: 800px;
     background: rgb(23,0,36);
     background: linear-gradient(120deg, rgb(247, 144, 162) 20%, rgb(176, 84, 238) 100%);
     color: #000000;
-    margin: 100px auto 0;
+    margin: 15px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -80,9 +80,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
     margin-top: 20px;
-    padding: 0 100px;
+}
+
+.details .col{
+    margin: 10px;
 }
 
 .col img{
@@ -105,9 +107,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 20px;
-    margin-top: 50px;
-    padding: 0 100px;
+    margin-top: 10px;
+}
+
+.suns .col {
+margin: 10px;
 }
 
 .weather {
