@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Weather App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="app.webmanifest">
-    <script>
-        navigator.serviceWorker.register("/app.js")
-    </script>
-
+    <script src="app.js" defer></script>
 
 </head>
-<body>
-
+<body>     
     <div class="card">
+        <section  id="instalacion">
+            <button class="btn primary">INSTALAR</button>
+        </section>
         <div class="search">
             <input type="text" placeholder="enter city name" spellcheck="false">
             <button><img src="images/search.png" alt=""></button>
@@ -55,10 +54,11 @@
                         <p class="feels_like">25°</p>
                         <p>Feels Like</p>
                     </div>
+                   
                 </div>
             </div>
 
-            <div class="suns">
+            <div class="suns" id="sunsData">
                 <div class="col">
                     <img src="images/sunrise.png">
                     <div>
@@ -74,10 +74,11 @@
                     </div>
                 </div>
             </div>
-
+            <button id="showDataButton" class="botn primary">Mostrar Datos</button>
         </div>
 
     </div>
+
     
     <script>
 

@@ -1,9 +1,10 @@
 {
     "name": "Weather App",
     "short_name": "Weather",
-    "display": "minimal-ui",
+    "display": "standalone",
     "description": "A minimalist application that allows you to search for the weather of different countries",
     "start_url": "/index.html",
+    "link": "/index.html",
     "background_color": "#292929",
     "theme_color": "#B054EEFF",
     "scope": "./",
@@ -21,13 +22,7 @@
         }
     ],
     "screenshots": [
-        {
-            "src": "images/1920x1080.png",
-            "sizes": "1920x1080",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
+               {
             "src": "images/650x650.png",
             "sizes": "650x650",
             "type": "image/png",
@@ -40,5 +35,28 @@
             "purpose": "any",
             "form_factor": "wide"
         }
-    ]
+    ],
+
+    "cache": {
+        "name": "my-cache",
+        "urls": [
+          "/",
+          "index.html",
+          "style.css",
+          "app.js",
+          "images/search.png",
+          "images/cloud.png",
+          "images/sun.png",
+          "images/rain.png",
+          "images/rain-cloud.png",
+          "images/partly-cloudy.png",
+          "images/dew.png",
+          "images/wind.png",
+          "images/thermometer.png",
+          "images/sunrise.png",
+          "images/sunset.png",
+          "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+        ]
+      }
+      
 }
