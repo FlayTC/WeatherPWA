@@ -9,7 +9,6 @@ navigator.serviceWorker.register("/sw.js").then(registracion => {
 // Pedimos storage persistente
 navigator.storage.persist(); 
 
-
 window.addEventListener("beforeinstallprompt", event => {
     event.preventDefault(); // Oculta el banner en los casos donde aparece
     bip = event;
@@ -29,7 +28,7 @@ document.querySelector("#instalacion button").addEventListener("click", async (e
             console.log('El usuario rechazó el prompt de instalación');
         }
     } else {
-        alert("Se isntalo correctamente"); // Aquí se muestra el mensaje
+        alert("Se instalo correctamente"); // Aquí se muestra el mensaje
     }
 });
 

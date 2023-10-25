@@ -24,7 +24,6 @@
         <div class="error">
             <p>Invalid city name</p>
         </div>
-
         <div class="weather">
             <h1 class="city">Argentina</h1>
             <img src="images/rain.png" alt="weather-icon">
@@ -57,7 +56,6 @@
                    
                 </div>
             </div>
-
             <div class="suns" id="sunsData">
                 <div class="col">
                     <img src="images/sunrise.png">
@@ -76,10 +74,7 @@
             </div>
             <button id="showDataButton" class="botn primary">Mostrar Datos</button>
         </div>
-
-    </div>
-
-    
+    </div> 
     <script>
 
     const apiKey = "7f86321d33ae4519efd9cf84235476ce";
@@ -137,7 +132,6 @@
         const sunsetDate = new Date(sunsetTimestamp);
         const horaAtardecer = sunsetDate.toLocaleTimeString(); 
         document.querySelector(".sunset").innerHTML = horaAtardecer;
-
         }
 
         //Actualizacion de datos
@@ -176,21 +170,16 @@
         const sunsetDate = new Date(sunsetTimestamp);
         const horaAtardecer = sunsetDate.toLocaleTimeString(); 
         document.querySelector(".sunset").innerHTML = horaAtardecer;
-
         }
 
         searchBtn.addEventListener("click", ()=> {
             checkWeather(searchBox.value);
         })
-
         searchBox.addEventListener("keydown", (event) => {
             if(event.key == "Enter") {
                 checkWeather(searchBox.value);
             }
         })
-
-
     </script>
-
 </body>
 </html>

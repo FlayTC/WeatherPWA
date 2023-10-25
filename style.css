@@ -69,8 +69,6 @@ body{
     cursor: pointer;
 }
 
-
-
 .card{
     width: 100%;
     max-width: 800px;
@@ -170,6 +168,7 @@ body{
     align-items: center;
     justify-content: space-around;
 }
+
 .suns {
     display: flex; /* Cambiar a flex para colocar los elementos en una fila */
     align-items: center;
