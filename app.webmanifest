@@ -22,12 +22,6 @@
         }
     ],
     "screenshots": [
-               {
-            "src": "images/650x650.png",
-            "sizes": "650x650",
-            "type": "image/png",
-            "purpose": "any"
-        },
         {
             "src": "images/600x800.png",
             "sizes": "600x800",

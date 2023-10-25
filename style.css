@@ -22,7 +22,6 @@ body{
         display: none;
     }
     
-
 }
 
 @media (display-mode: browser) {
@@ -31,6 +30,13 @@ body{
     }
 
 }
+
+@media (max-width: 600px) {
+
+    .search input{
+        width: 200px;
+    }
+  }
 
 #instalacion {
     display: flex;
@@ -115,16 +121,7 @@ body{
 .search button img{
     width: 30px;
 }
-
-@media (max-width: 393px) {
-
-    .search input{
-        width: 200px;
-    }
-
-
-  }
-  
+ 
 
 .weather-icon{
     width: 180px;
