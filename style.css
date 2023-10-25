@@ -170,7 +170,7 @@ body{
 }
 
 .suns {
-    display: flex; /* Cambiar a flex para colocar los elementos en una fila */
+    display: flex; 
     align-items: center;
     justify-content: space-around;
     margin-top: 10px;
@@ -178,8 +178,8 @@ body{
 
 .suns .col {
     margin: 20px;
-    display: inline-block; /* Agregar para que los elementos se muestren en línea */
-    text-align: center; /* Alinear el contenido en el centro */
+    display: inline-block; 
+    text-align: center; 
 }
 
 .weather {

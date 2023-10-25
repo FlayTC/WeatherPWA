@@ -134,44 +134,6 @@
         document.querySelector(".sunset").innerHTML = horaAtardecer;
         }
 
-        //Actualizacion de datos
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-        document.querySelector(".humidity").innerHTML = data.main.humidity  + "%";
-        document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " km/h";
-        document.querySelector(".temp_max").innerHTML = Math.round(data.main.temp_max) + "°C MAX";
-        document.querySelector(".temp_min").innerHTML = Math.round(data.main.temp_min) + "°C MIN";
-        document.querySelector(".feels_like").innerHTML = Math.round(data.main.feels_like) + "°C";
-
-        //Actualizacion de imagenes
-        if(data.weather[0].main == "Clouds"){
-            weatherIcon.src = "images/cloud.png";
-        } else if (data.weather[0].main == "Clear"){
-            weatherIcon.src = "images/sun.png"
-        }
-        else if (data.weather[0].main == "Rain"){
-            weatherIcon.src = "images/rain.png"
-        }
-        else if (data.weather[0].main == "Drizzle"){
-            weatherIcon.src = "images/rain-cloud.png"
-        }
-        else if (data.weather[0].main == "Clear"){
-            weatherIcon.src = "images/partly-cloudy.png"
-        }
-
-        document.querySelector(".weather").style.display = "block";        
-
-        //Coloca la hora en formato local
-        const sunriseTimestamp = data.sys.sunrise * 1000; 
-        const sunriseDate = new Date(sunriseTimestamp);
-        const horaAmanecer = sunriseDate.toLocaleTimeString();
-        document.querySelector(".sunrise").innerHTML = horaAmanecer;
-        const sunsetTimestamp = data.sys.sunset * 1000;
-        const sunsetDate = new Date(sunsetTimestamp);
-        const horaAtardecer = sunsetDate.toLocaleTimeString(); 
-        document.querySelector(".sunset").innerHTML = horaAtardecer;
-        }
-
         searchBtn.addEventListener("click", ()=> {
             checkWeather(searchBox.value);
         })

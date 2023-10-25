@@ -44,6 +44,5 @@ showDataButton.addEventListener('click', function() {
 
 // Verifica si la aplicación se está ejecutando en modo independiente
 if (window.matchMedia('(display-mode: standalone)').matches) {
-    // Ajusta el tamaño de la ventana a 800x600 píxeles
     window.resizeTo(900, 800);
 }
