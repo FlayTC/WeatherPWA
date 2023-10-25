@@ -6,9 +6,6 @@ navigator.serviceWorker.register("/sw.js").then(registracion => {
     registracionSW = registracion;
 });
 
-// Pedimos storage persistente
-navigator.storage.persist(); 
-
 window.addEventListener("beforeinstallprompt", event => {
     event.preventDefault(); // Oculta el banner en los casos donde aparece
     bip = event;
